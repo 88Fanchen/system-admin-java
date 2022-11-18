@@ -35,13 +35,6 @@ CREATE TABLE `access_register` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COMMENT='出入登记表';
 
 -- ----------------------------
--- Records of access_register
--- ----------------------------
-INSERT INTO `access_register` VALUES ('1', '范晨', '17730312784', '1', '342623199906214418', '持有假条出校', '软件186', 'admin', '2021-12-17 14:39:37', '2021-12-17 14:39:37', '0');
-INSERT INTO `access_register` VALUES ('2', '范晨', '17730312784', '0', '342623199906214418', '正常返校', '软件186', 'admin', '2021-12-17 18:04:10', '2021-12-17 18:04:10', '0');
-INSERT INTO `access_register` VALUES ('3', '杜东亮', '19851920126', '1', '34262319990901159x', '正常请假出校', '软件186', 'admin', '2021-12-17 18:20:27', '2021-12-17 18:20:27', '0');
-
--- ----------------------------
 -- Table structure for access_return
 -- ----------------------------
 DROP TABLE IF EXISTS `access_return`;
@@ -56,11 +49,6 @@ CREATE TABLE `access_return` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_index` (`name`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='未归用户表';
-
--- ----------------------------
--- Records of access_return
--- ----------------------------
-INSERT INTO `access_return` VALUES ('1', '杜东亮', '19851920126', '34262319990901159x', '正常请假出校', '软件186', '2021-12-17 18:20:27');
 
 -- ----------------------------
 -- Table structure for good_info
@@ -83,15 +71,6 @@ CREATE TABLE `good_info` (
   `version` int(11) DEFAULT '1' COMMENT '乐观锁',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COMMENT='物资信息表';
-
--- ----------------------------
--- Records of good_info
--- ----------------------------
-INSERT INTO `good_info` VALUES ('1', '1', '冰露饮用水', 'http://localhost:8081/img/2021/12/562b13fd7f6a4d5184c02533a79e58c0.jpeg', '打', '20瓶/打', 'admin', '必不可少的饮用水', '40', '1', '2021-12-10 09:31:46', '2021-12-17 12:47:25', '0', '6');
-INSERT INTO `good_info` VALUES ('2', '4', '医用口罩', 'http://localhost:8081/img/2021/12/09e810d48ec648bca761ad662a04f0a3.jpg', '包', '10只/包', 'admin', '普通的医用口罩', '40', '1', '2021-12-10 15:39:32', '2021-12-17 12:47:25', '0', '3');
-INSERT INTO `good_info` VALUES ('3', '4', 'N95口罩', 'http://localhost:8081/img/2021/12/3f6850caac0c411ab8c518231d14eb4e.jpg', '盒', '15只/盒', 'admin', '防护性很强的口罩 安全', '50', '1', '2021-12-10 18:13:04', '2021-12-13 14:12:48', '0', '2');
-INSERT INTO `good_info` VALUES ('4', '1', '葡萄糖', 'http://localhost:8081/img/2021/12/203982b07f884c66abd5a75b37b3bb6a.jpg', '盒', '10只/盒', 'admin', '点滴必备', '60', '1', '2021-12-10 18:23:26', '2021-12-18 20:11:39', '0', '3');
-INSERT INTO `good_info` VALUES ('5', '3', '酒精棉', 'http://localhost:8081/img/2021/12/daa919ce70ea4b2f8b11fa9a5bba631a.jpg', '箱', '20包/箱', 'admin', '消毒用', '30', '1', '2021-12-11 09:18:15', '2021-12-11 09:29:44', '0', '3');
 
 -- ----------------------------
 -- Table structure for good_stock
@@ -174,16 +153,6 @@ CREATE TABLE `health_clock` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COMMENT='打卡健康表';
 
 -- ----------------------------
--- Records of health_clock
--- ----------------------------
-INSERT INTO `health_clock` VALUES ('1', 'admin', '2', '38.0', '1', '1', '1', '江苏省-苏州市-昆山市', '2021-12-15 14:24:57', '2021-12-15 14:24:57', '103', '0');
-INSERT INTO `health_clock` VALUES ('2', 'admin', '2', '38.0', '1', '1', '1', '北京市-市辖区-海淀区', '2021-12-15 14:28:15', '2021-12-15 14:28:15', '103', '0');
-INSERT INTO `health_clock` VALUES ('3', 'student', '2', '38.0', '1', '1', '1', '江苏省-南京市-玄武区', '2021-12-15 14:45:49', '2021-12-15 14:45:49', '103', '0');
-INSERT INTO `health_clock` VALUES ('4', 'student', '2', '36.9', '1', '1', '1', '江苏省-南京市-建邺区', '2021-12-16 12:30:04', '2021-12-16 12:30:04', '103', '0');
-INSERT INTO `health_clock` VALUES ('5', 'admin', '2', '37.1', '1', '1', '1', '江苏省-南京市-秦淮区', '2021-12-16 15:26:04', '2021-12-16 15:26:04', '103', '0');
-INSERT INTO `health_clock` VALUES ('6', 'admin', '2', '37.3', '1', '1', '1', '安徽省-芜湖市-无为县', '2021-12-18 20:14:05', '2021-12-18 20:14:05', '103', '0');
-
--- ----------------------------
 -- Table structure for health_report
 -- ----------------------------
 DROP TABLE IF EXISTS `health_report`;
@@ -201,14 +170,6 @@ CREATE TABLE `health_report` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COMMENT='二码一报告表';
 
--- ----------------------------
--- Records of health_report
--- ----------------------------
-INSERT INTO `health_report` VALUES ('1', 'admin', '103', '17730312784', 'http://localhost:8081/img/2021/12/09a5984e9a1448a5989396ae02ee2218.jpg', 'http://localhost:8081/img/2021/12/70b927c1e2474706bb7d96e5bf515af7.jpg', 'http://localhost:8081/img/2021/12/ca5ed73630a94883864215d2b4d5ba07.jpg', '1', '2021-12-16 15:05:52', '2021-12-16 15:05:52');
-INSERT INTO `health_report` VALUES ('2', 'admin', '103', '17730312784', 'http://localhost:8081/img/2021/12/73054455739a4e4a90999af1badef193.jpg', 'http://localhost:8081/img/2021/12/1ea4667c7734445ebcee993c8166830f.jpg', 'http://localhost:8081/img/2021/12/2402dbf4d1a34efca35abec5d7288770.jpg', '1', '2021-12-16 15:08:29', '2021-12-16 15:08:29');
-INSERT INTO `health_report` VALUES ('3', 'admin', '103', '17730312784', 'http://localhost:8081/img/2021/12/3bd20328127a4913880a103997789fa4.jpg', 'http://localhost:8081/img/2021/12/efb111d5de62419ab771d6c310a1e64c.jpg', 'http://localhost:8081/img/2021/12/fe54d296d493481abf39d5b5a197390f.jpg', '0', '2021-12-16 15:13:04', '2021-12-16 15:13:04');
-INSERT INTO `health_report` VALUES ('4', 'student', '103', '17730312784', 'http://localhost:8081/img/2021/12/b1fb6d36d7d446d282efa082c4d18887.jpg', 'http://localhost:8081/img/2021/12/d37c7ab0149c407a9487b91926d6a8f9.jpg', 'http://localhost:8081/img/2021/12/73caed944b514424a2f22c32f26701f5.jpg', '0', '2021-12-16 15:15:17', '2021-12-16 15:15:17');
-INSERT INTO `health_report` VALUES ('5', 'admin', '103', '17730312784', 'http://localhost:8081/img/2021/12/d8b797f1567c471eae9176232d1d97ad.jpg', 'http://localhost:8081/img/2021/12/41d62d3b8e314ee4b575b238cd9c8bdd.jpg', 'http://localhost:8081/img/2021/12/351a3a4da719497097f7781c5d1e33e1.jpg', '1', '2021-12-18 20:15:04', '2021-12-18 20:15:04');
 
 -- ----------------------------
 -- Table structure for leave_apply
@@ -860,8 +821,8 @@ CREATE TABLE `sys_user` (
 -- ----------------------------
 INSERT INTO `sys_user` VALUES ('1', 'admin', '$2a$10$THwIXnfNljeDVbG6tYNB2ukKLxOqur7xY/Cf7g4dG3xD6FEnDKfvW', '超级管理员', 'http://localhost:8081/img/2021/12/97b195d7383b47a08cbc6b88aaed3b2a.jpg', '17730312784', '江苏南京', '103', '2021-01-12 22:13:53', '2021-12-18 20:05:00', '超级管理员', '1', '0', '53');
 INSERT INTO `sys_user` VALUES ('2', 'student', '$2a$10$iBMPjT2Dibhhys7VnJ3Kcu4eh3u7LOBZLNC3g4TMl0reFheB7VJku', '学生用户', 'http://localhost:8081/img/2021/12/400bba2995ec46fc97249cece09f9ca4.jpg', '17730312784', '常州', '103', '2021-12-13 14:07:44', '2021-12-17 19:23:17', '学生用户', '1', '0', '4');
-INSERT INTO `sys_user` VALUES ('3', 'service', '$2a$10$FGHwBaJaHOg/7.Rig7McOOaMx18CMfpqmFYRBFzHOgNffdUEym84O', '后勤用户', 'http://localhost:8081/img/2021/12/59b880040d6443b28956519118c2d507.jpg', '18855331293', '芜湖', '104', '2021-12-13 14:11:13', '2021-12-17 19:23:06', '后勤用户', '1', '0', '6');
-INSERT INTO `sys_user` VALUES ('4', 'teacher', '$2a$10$KPoiHuWzMXmT5WenDTq8heKQejAm4TvFL5SHsFUUrlab72jHPhU02', '老师用户', 'http://localhost:8081/img/2021/12/400bba2995ec46fc97249cece09f9ca4.jpg', '13966346765', '常州', '200', '2021-12-16 12:27:41', '2021-12-16 18:03:52', '老师用户', '1', '0', '3');
+INSERT INTO `sys_user` VALUES ('3', 'service', '$2a$10$FGHwBaJaHOg/7.Rig7McOOaMx18CMfpqmFYRBFzHOgNffdUEym84O', '后勤用户', 'http://localhost:8081/img/2021/12/59b880040d6443b28956519118c2d507.jpg', '18855331452', '芜湖', '104', '2021-12-13 14:11:13', '2021-12-17 19:23:06', '后勤用户', '1', '0', '6');
+INSERT INTO `sys_user` VALUES ('4', 'teacher', '$2a$10$KPoiHuWzMXmT5WenDTq8heKQejAm4TvFL5SHsFUUrlab72jHPhU02', '老师用户', 'http://localhost:8081/img/2021/12/400bba2995ec46fc97249cece09f9ca4.jpg', '13542245521', '常州', '200', '2021-12-16 12:27:41', '2021-12-16 18:03:52', '老师用户', '1', '0', '3');
 
 -- ----------------------------
 -- Table structure for sys_user_role
