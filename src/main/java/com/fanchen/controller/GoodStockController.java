@@ -67,11 +67,17 @@ public class GoodStockController extends BaseController<GoodStock> {
             stock.setRemark(goodStock.getRemark());
             goodStockList.add(stock);
             GoodInfo goodInfo = goodInfoService.getById(goodDto.getId());
+            if (null == goodInfo.getTotal()){
+                goodInfo.setTotal(0);
+            }
             int res;
             if (goodStock.getOperateType() == 0) {
                 res = goodInfo.getTotal() + goodDto.getGoodNum();
             } else {
                 res = goodInfo.getTotal() - goodDto.getGoodNum();
+                if (res < 0){
+                    throw new RuntimeException("库存不够");
+                }
             }
             goodInfo.setTotal(res);
             goodInfoService.updateById(goodInfo);
